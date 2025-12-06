@@ -4,7 +4,7 @@ module.exports = {
     name: "Get Channel Mentions In List",
   },
   info: {
-    source: "https://github.com/slothyace/bmods-ace/tree/main/QOLs",
+    source: "https://github.com/slothyace/ace-bmods/tree/main/QOLs",
     creator: "Acedia QOLs",
     donate: "https://ko-fi.com/slothyacedia",
   },
