@@ -14,7 +14,7 @@ A dedicated repository for my modded actions for [BMD](https://store.steampowere
 
 ## Worded Installation Guide
 
-1. Download the [repo](https://github.com/slothyace/ace-bmods/archive/refs/heads/main.zip).
+1. Download the [repo](https://github.com/slothyace/bmods-ace/archive/refs/heads/main.zip).
 2. Extract the zip.
 3. Open your bmd install location and open the `AppData` folder.
 4. On Windows, you can run the `merge.bat` file to merge the folders as intended.
