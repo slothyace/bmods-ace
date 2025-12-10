@@ -1,4 +1,4 @@
-# ace-bmods
+# bmods-ace
 
 A dedicated repository for my modded actions for [BMD](https://store.steampowered.com/app/2592170/Bot_Maker_For_Discord/).
 
