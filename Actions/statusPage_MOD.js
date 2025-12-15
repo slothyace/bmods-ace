@@ -15,7 +15,7 @@ module.exports = {
   modVersion,
   info: {
     source: "https://github.com/slothyace/bmods-ace/tree/main/Actions",
-    creator: "Acedia",
+    creator: "Acedia & qizzle",
     donate: "https://ko-fi.com/slothyacedia",
   },
   UI: [
