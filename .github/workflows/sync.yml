@@ -40,9 +40,13 @@ jobs:
           if [[ -n "$(git status --porcelain)" ]]; then
             git config user.name "github-actions"
             git config user.email "github-actions@github.com"
+
+            MSG="${{ github.event.client_payload.commit_message }}"
+            MSG="${MSG:-Sync from ace-bmods}"
+
             git add .
-            git commit -m "Sync from source"
+            git commit -m "Sync from source: ${MSG}"
             git push
           else
-            echo "No changes to relevant folders"
+            echo "No changes to sync"
           fi
