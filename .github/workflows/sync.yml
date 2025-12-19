@@ -1,0 +1,48 @@
+name: Sync from ace-bmods (private)
+
+on:
+  repository_dispatch:
+    types: [sync-source]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout target repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Clone source repo
+        run: |
+          git clone https://x-access-token:${{ secrets.SOURCE_REPO_TOKEN }}@github.com/slothyace/ace-bmods.git source
+
+      - name: Sync files (with exclusions)
+        run: |
+          rsync -av --delete \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude 'Extras/' \
+            --exclude 'z.Abandoned/' \
+            --exclude 'z.Extras/' \
+            --exclude 'z.WIPs/' \
+            --exclude '.gitattributes' \
+            --exclude 'merge.bat' \
+            --exclude 'mergeExtras.bat' \
+            --exclude 'README.md' \
+            source/ ./
+
+      - name: Commit and push if changed
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions"
+            git config user.email "github-actions@github.com"
+            git add .
+            git commit -m "Sync from source"
+            git push
+          else
+            echo "No changes to relevant folders"
+          fi
