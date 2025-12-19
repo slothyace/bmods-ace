@@ -18,13 +18,13 @@ jobs:
 
       - name: Clone source repo
         run: |
-          git clone https://x-access-token:${{ secrets.SOURCE_REPO_TOKEN }}@github.com/slothyace/ace-bmods.git source
+          git clone https://x-access-token:${{ secrets.SOURCE_REPO_TOKEN }}@github.com/slothyace/ace-bmods.git /tmp/ace-bmods
 
       - name: Sync files (with exclusions)
         run: |
           rsync -av --delete \
             --exclude '.git' \
-            --exclude '.github' \
+            --exclude '.github/' \
             --exclude 'Extras/' \
             --exclude 'z.Abandoned/' \
             --exclude 'z.Extras/' \
@@ -33,7 +33,7 @@ jobs:
             --exclude 'merge.bat' \
             --exclude 'mergeExtras.bat' \
             --exclude 'README.md' \
-            source/ ./
+            /tmp/ace-bmods/ ./
 
       - name: Commit and push if changed
         run: |
