@@ -1,4 +1,4 @@
-modVersion = "v1.0.0"
+modVersion = "v1.0.1"
 const titleCase = (string) =>
   string
     .split(" ")
@@ -146,7 +146,7 @@ module.exports = {
         break
       }
 
-      case "import": {
+      case "importList": {
         wordList = bridge.get(values.wordListVar)
         break
       }
