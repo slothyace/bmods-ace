@@ -118,7 +118,6 @@ module.exports = {
       let headerData = header.data
       headers[bridge.transf(headerData.key)] = bridge.transf(headerData.value)
     }
-
     options.headers = headers
 
     await new Promise((resolve, reject) => {
