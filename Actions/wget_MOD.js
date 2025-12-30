@@ -116,7 +116,7 @@ module.exports = {
     let headers = {}
     for (let header of values.requestHeaders) {
       let headerData = header.data
-      headers[headerData.key] = headerData.value
+      headers[bridge.transf(headerData.key)] = bridge.transf(headerData.value)
     }
 
     options.headers = headers
