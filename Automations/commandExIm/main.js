@@ -173,7 +173,7 @@ module.exports = {
         downloadsDir = path.normalize(resultData.exportPath)
         delete resultData["exportPath"]
         let selectedIds = Object.keys(resultData).filter((k) => resultData[k]?.length)
-        if (!fs.existsSync(downloadsDir)) {
+        if (!fs.existsSync(downloadsDir) && selectedIds.length > 0) {
           fs.mkdirSync(downloadsDir, { recursive: true })
         }
 
