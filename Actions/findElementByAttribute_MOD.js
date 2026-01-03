@@ -160,7 +160,7 @@ module.exports = {
 
         if (current == attributeValue) {
           foundElement = element
-          elementIden = p
+          elementIden = key
           break
         }
       }
