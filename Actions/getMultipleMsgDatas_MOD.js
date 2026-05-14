@@ -1,4 +1,4 @@
-modVersion = "v1.0.0"
+modVersion = "v1.0.1"
 module.exports = {
   data: {
     name: "Get Multiple Message Datas",
@@ -68,7 +68,7 @@ module.exports = {
 
     for (let retrieve of values.retrieveList) {
       let retrieveData = retrieve.data
-      let retrieveObject = await bridge.getMessage(retrieveData.channel)
+      let retrieveObject = await bridge.getMessage(retrieveData.message)
       let id = retrieveObject.id
 
       let defaultVal = bridge.transf(retrieveData.defaultValue) || ""
