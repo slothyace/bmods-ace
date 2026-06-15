@@ -44,21 +44,21 @@ module.exports = {
           storeAs: ["removeUnusedActions", "removeUnusedEvents"],
           nameSchemes: ["Remove Unused Actions", "Remove Unused Events"],
         },
-        "_",
-        {
-          element: "toggle",
-          storeAs: "modifyRuntime",
-          name: "Exported Project?",
-          help: {
-            title: "What Is This Used For?",
-            UI: [
-              {
-                element: "text",
-                text: "This tells the automation that it is meant to be a export and it will modify certain files to allow it to run flawlessly.",
-              },
-            ],
-          },
-        },
+        // "_",
+        // {
+        //   element: "toggle",
+        //   storeAs: "modifyRuntime",
+        //   name: "Exported Project?",
+        //   help: {
+        //     title: "What Is This Used For?",
+        //     UI: [
+        //       {
+        //         element: "text",
+        //         text: "This tells the automation that it is meant to be a export and it will modify certain files to allow it to run flawlessly.",
+        //       },
+        //     ],
+        //   },
+        // },
         "-",
         {
           element: "text",
